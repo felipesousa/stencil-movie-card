@@ -1,57 +1,77 @@
 import { Component, Prop, h } from '@stencil/core';
 
 export interface IMovie {
-  tags: Array<string>;
   title: string;
   description: string;
   picture: string;
+  duration: string;
+  tags: Array<string>;
+  actors: Array<string>;
+  trailerUrl: string;
 }
 
 @Component({
   tag: 'stencil-movie-card',
   styleUrl: 'stencil-movie-card.scss',
+  shadow: true,
 })
 export class StencilVideoPlaceholderComponent {
   @Prop() movie: IMovie;
+
+  private redirect = url => window.location.replace(url);
 
   render() {
     return (
       <article class="movie">
         <header
           class="movie-picture"
-          style={{ backgroundImage: `url(https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg)` }}
+          style={{ backgroundImage: `url(${this.movie.picture})` }}
         >
         </header>
         <main class="content">
-          <div class="mr-grid">
+          <section class="mr-grid">
             <div class="col1">
-              <h1>Interstellar</h1>
+              <h1>{this.movie.title}</h1>
               <ul class="movie-gen">
-                <li>PG-13  /</li>
-                <li>2h 49min  /</li>
-                <li>Adventure, Drama, Sci-Fi,</li>
+                <li>{this.movie.duration} /</li>
+                <li>
+                  {
+                    this.movie.tags.map((tag, key) => (
+                      <span id={key.toString()}>
+                        {tag}{this.movie.tags.length - 1 > key && ', '}
+                      </span>
+                    ))
+                  }
+                </li>
               </ul>
             </div>
-          </div>
-          <div class="mr-grid summary-row">
+          </section>
+          <section class="mr-grid summary-row">
             <div class="col2">
               <h5>SUMMARY</h5>
             </div>
-          </div>
-          <div class="mr-grid">
+          </section>
+          <section class="mr-grid">
             <div class="col1">
-              <p class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great 
-              Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </p>
+              <p class="movie-description">{this.movie.description}</p>
             </div>
-          </div>
-          <div class="mr-grid actors-row">
+          </section>
+          <section class="mr-grid actors-row">
             <div class="col1">
-              <p class="movie-actors">Matthew McConaughey, Anne Hathaway, Jessica Chastain</p>
+              <p class="movie-actors">
+                {
+                  this.movie.actors.map((actor, key) => (
+                    <span id={key.toString()}>
+                      {actor}{this.movie.actors.length - 1 > key && ', '}
+                    </span>
+                  ))
+                }
+              </p>
             </div>
-          </div>
+          </section>
           <footer class="mr-grid action-row">
             <div class="col2">
-              <button class="watch-btn">
+              <button class="watch-btn" onClick={() => this.redirect(this.movie.trailerUrl)}>
                 <h3>WATCH TRAILER</h3>
               </button>
             </div>
