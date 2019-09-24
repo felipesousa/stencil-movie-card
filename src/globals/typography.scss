@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic,600italic,700italic,800italic);
+
+$heading-font-family: 'Montserrat', sans-serif;
+$paragraph-font-family: 'Open Sans', sans-serif;
+
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$font-regular: 400;
+$mont-bold: 700;
+
+$text-movie-title: 36px;
+$text-summary: 12px;
+$text-action-btn: 14px;
+$text-movie-description: 12px;
+
+h1, h2, h3, h4, h5 {
+  font-family: $heading-font-family;
+  color: $accent-color;
+  margin: 0px;
+}
+
+h1 {
+  font-size: $text-movie-title;
+  font-weight: $font-regular;
+}
+
+h3 {
+  font-size: $text-action-btn;
+  font-weight: $font-regular;
+  color: $brand-color;
+}
+
+h5 {
+  font-size: $text-summary;
+  font-weight: $font-regular;
+}

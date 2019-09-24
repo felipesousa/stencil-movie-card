@@ -1,0 +1,18 @@
+.mr-grid { width: 100%; }
+.mr-grid:before, .mr-grid:after { content: ""; display: table; }
+.mr-grid:after { clear: both; }
+.mr-grid { zoom: 1; }
+
+.col1, .col2, .col3 { 
+	margin: 0% 0.5% 0.5% 0.5%;
+  padding: 1%;
+  float: left;
+  display: block;
+}
+
+.col1 { width: 98%; }
+.col2 { width: 47%; }
+.col3 { width: 30.3333333333%; }
+.col4 { width: 22%; }
+.col5 { width: 17%; }
+.col6 { width: 13.6666666667%; }
