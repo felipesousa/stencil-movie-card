@@ -8,10 +8,10 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   IMovie,
-} from './components/stencil-video-placeholder/stencil-video-placeholder';
+} from './components/stencil-movie-card/stencil-movie-card';
 
 export namespace Components {
-  interface StencilVideoPlaceholder {
+  interface StencilMovieCard {
     'movie': IMovie;
   }
 }
@@ -19,23 +19,23 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLStencilVideoPlaceholderElement extends Components.StencilVideoPlaceholder, HTMLStencilElement {}
-  var HTMLStencilVideoPlaceholderElement: {
-    prototype: HTMLStencilVideoPlaceholderElement;
-    new (): HTMLStencilVideoPlaceholderElement;
+  interface HTMLStencilMovieCardElement extends Components.StencilMovieCard, HTMLStencilElement {}
+  var HTMLStencilMovieCardElement: {
+    prototype: HTMLStencilMovieCardElement;
+    new (): HTMLStencilMovieCardElement;
   };
   interface HTMLElementTagNameMap {
-    'stencil-video-placeholder': HTMLStencilVideoPlaceholderElement;
+    'stencil-movie-card': HTMLStencilMovieCardElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface StencilVideoPlaceholder extends JSXBase.HTMLAttributes<HTMLStencilVideoPlaceholderElement> {
+  interface StencilMovieCard extends JSXBase.HTMLAttributes<HTMLStencilMovieCardElement> {
     'movie'?: IMovie;
   }
 
   interface IntrinsicElements {
-    'stencil-video-placeholder': StencilVideoPlaceholder;
+    'stencil-movie-card': StencilMovieCard;
   }
 }
 

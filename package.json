@@ -1,5 +1,5 @@
 {
-  "name": "stencil-video-placeholder",
+  "name": "stencil-movie-card",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-video-placeholder/stencil-video-placeholder.js",
+  "unpkg": "dist/stencil-movie-card/stencil-movie-card.js",
   "files": [
     "dist/",
     "loader/"

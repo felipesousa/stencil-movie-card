@@ -8,8 +8,8 @@ export interface IMovie {
 }
 
 @Component({
-  tag: 'stencil-video-placeholder',
-  styleUrl: 'stencil-video-placeholder.scss',
+  tag: 'stencil-movie-card',
+  styleUrl: 'stencil-movie-card.scss',
 })
 export class StencilVideoPlaceholderComponent {
   @Prop() movie: IMovie;
